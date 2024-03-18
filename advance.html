@@ -17,13 +17,12 @@
 <body>
     <header class=" banner-img  text-white">
         <!-- navbar start -->
-        <div class="navbar bg-base-40 text-black  ">
-            <div class="navbar-start px-4 sadow-2xl">
-              <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-40 rounded-box w-52">
+        <div class="navbar bg-base-100 text-black sticky top-0 z-10">
+          <div class="navbar-start px-10 shadow-2xl">
+              <div tabindex="0" id="menu-toggle" role="button" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 toggle-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              </div>
+              <ul tabindex="0" id="dropdown-menu" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 hidden">
                   <li><a class="font-semibold text-xl hover:text-yellow-400" href="index.html">Home</a></li>
                   <li><a class="font-semibold text-xl hover:text-yellow-400" href="services.html">Services</a></li>
                   <li><a class="font-semibold text-xl hover:text-yellow-400" href="ourclass.html">Our Classes</a></li>
@@ -31,23 +30,20 @@
                   <li><a class="font-semibold text-xl hover:text-yellow-400" href="blog.html">Blog</a></li>
                   <li><a class="font-semibold text-xl hover:text-yellow-400" href="pricing.html">Pricing</a></li>
                   <li><a class="font-semibold text-xl hover:text-yellow-400" href="contact.html">Contact Us</a></li>
-                </ul>
-              </div>
-              <a class="btn btn-ghost text-3xl font-bold">Power <span class="text-yellow-400 text-4xl">X</span></a>
-            </div>
-            <div class="navbar-center hidden lg:flex text-xl">
-              <ul class="menu menu-horizontal px-1">
-                <li><a class=" font-semibold text-xl hover:text-yellow-400" href="index.html">Home</a></li>
-                <li><a class="font-semibold text-xl hover:text-yellow-400" href="services.html">Services</a></li>
-                <li><a class="font-semibold text-xl hover:text-yellow-400" href="ourclass.html">Our Classes</a></li>
-                <li><a class="font-semibold text-xl hover:text-yellow-400" href="about.html">About Us</a></li>
-                <li><a class="font-semibold text-xl hover:text-yellow-400" href="blog.html">Blog</a></li>
-                <li><a class="font-semibold text-xl hover:text-yellow-400" href="pricing.html">Pricing</a></li>
-                <li><a class="font-semibold text-xl hover:text-yellow-400" href="contact.html">Contact Us</a></li>
               </ul>
-            </div>
-            
-        </div>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+                  <li><a class="font-semibold text-xl hover:text-yellow-400" href="index.html">Home</a></li>
+                  <li><a class="font-semibold text-xl hover:text-yellow-400" href="services.html">Services</a></li>
+                  <li><a class="font-semibold text-xl hover:text-yellow-400" href="ourclass.html">Our Classes</a></li>
+                  <li><a class="font-semibold text-xl hover:text-yellow-400" href="about.html">About Us</a></li>
+                  <li><a class="font-semibold text-xl hover:text-yellow-400" href="blog.html">Blog</a></li>
+                  <li><a class="font-semibold text-xl hover:text-yellow-400" href="pricing.html">Pricing</a></li>
+                  <li><a class="font-semibold text-xl hover:text-yellow-400" href="contact.html">Contact Us</a></li>
+              </ul>
+          </div>
+      </div>
         <!-- navbar end  -->
         
         <!-- banner section start  -->
@@ -169,5 +165,13 @@
           <a class="link link-hover">Cookie policy</a>
         </nav>
       </footer>
+      <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            var menu = document.getElementById("dropdown-menu");
+            menu.classList.toggle("hidden");
+            var icon = document.querySelector(".toggle-icon");
+            icon.classList.toggle("rotate-180");
+        });
+    </script>
 </body>
 </html>
